@@ -38,7 +38,7 @@ export class CalculatorComponent implements OnInit {
   concatenateNumber(currentNumber: string, concatenatorNumber: string): string {
     
     if(currentNumber === '0' || currentNumber ===null){
-      return '0.';
+      currentNumber = '';
     }
 
 
@@ -47,7 +47,7 @@ export class CalculatorComponent implements OnInit {
     }
 
 
-    if(concatenatorNumber === '.' || currentNumber.indexOf('.') > -1){
+    if(concatenatorNumber === '.' && currentNumber.indexOf('.') > -1){
       return currentNumber;
     }
 
@@ -55,7 +55,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   defineOperation(operation:string):void {
-    if(this.operation!== null){
+    if(this.operation === null){
       this.operation = operation;
       return;
     }
