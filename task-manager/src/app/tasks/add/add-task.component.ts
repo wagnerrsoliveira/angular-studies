@@ -22,7 +22,7 @@ export class AddTaskComponent implements OnInit {
     this.task = new Task();
   }
 
-  add():void{
+  save():void{
     if(this.formTask.form.valid){
       this.taskService.add(this.task);
       this.router.navigate(["/tasks"]);
