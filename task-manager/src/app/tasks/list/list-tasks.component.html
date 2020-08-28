@@ -22,6 +22,7 @@
           type="checkbox"
           [value]="task.id"
           [checked]="task.done"
+          (click)="updateStatus(task)"
           >
       </td>
       <td class="text-center" style="width: 200px">
