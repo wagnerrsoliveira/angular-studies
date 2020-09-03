@@ -62,7 +62,8 @@ export class TicTacToeService {
   }
 
   play(positionX:number,positionY:number){
-    if(this.board[positionX][positionY] !== this.EMPTY || this.vitory.length===0){
+
+    if(this.board[positionX][positionY] !== this.EMPTY || this.vitory.length){
       return;
     }
 
@@ -74,11 +75,11 @@ export class TicTacToeService {
       this.cpuPlay();
     }
 
-    if(this.vitory.length>0){
+    if(this.vitory.length){
       this._showEnd = true;
     }
 
-    if(this.vitory.length===0 && this.numberOfMoves===9){
+    if(!this.vitory.length && this.numberOfMoves===9){
       this._player = 0;
       this._showEnd = true;
     }
@@ -143,7 +144,7 @@ export class TicTacToeService {
 
   }
 
-  getMove(player:number):number[]{
+  getMove(player:number):number[]{   
     let board = this.board;
     for (let row = 0; row < this.BOARD_SIZE; row++) {
       for (let column = 0; column < this.BOARD_SIZE; column++) {
