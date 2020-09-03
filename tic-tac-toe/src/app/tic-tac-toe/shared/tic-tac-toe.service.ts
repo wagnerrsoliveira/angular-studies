@@ -40,7 +40,7 @@ export class TicTacToeService {
     }
   }
 
-  get shoWStart():boolean{
+  get showStart():boolean{
     return this._showStart;
   }
 

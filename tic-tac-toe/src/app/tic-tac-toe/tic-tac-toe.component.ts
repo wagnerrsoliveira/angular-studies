@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TicTacToeService } from './shared';
 
 @Component({
   selector: 'tic-tac-toe',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicTacToeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ticTacToeService: TicTacToeService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.ticTacToeService.initialize()
   }
 
+  get showStart():boolean{
+    return this.ticTacToeService.showStart;
+  }
+
+  get showBoard():boolean{
+    return this.ticTacToeService.showBoard;
+  }
+
+  get showEnd():boolean{
+    return this.ticTacToeService.showEnd;
+  }
+
+  startGame(){
+    this.ticTacToeService.startGame();
+  }
 }

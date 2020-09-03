@@ -2,18 +2,20 @@
     <h2>Tic tac toe</h2>
     
     <!-- main screen -->
-    <div class="main">
+    <div class="main" *ngIf="showStart">
       <a href="#" 
-         class="button">
+         class="button"
+         (click)="startGame()"
+         >
          Start
       </a>
     </div><!-- end main screen -->
   
-    <!-- boarde -->
-    <div>
+    <!-- board -->
+    <div *ngIf="showBoard">
       <ul>
-        <li class="kz-border-bottom kz-border-right kz-img-x"></li>
-        <li class="kz-border-bottom kz-border-right kz-img-o"></li>
+        <li class="kz-border-bottom kz-border-right"></li>
+        <li class="kz-border-bottom kz-border-right"></li>
         <li class="kz-border-bottom"></li>
         <li class="kz-border-bottom kz-border-right"></li>
         <li class="kz-border-bottom kz-border-right"></li>
@@ -25,7 +27,7 @@
     </div><!-- end board --> 
   
     <!-- final screen -->
-    <div>
+    <div *ngIf="showEnd">
       <span>
       <p>You win!!!</p>
       <p>You lose...</p>
