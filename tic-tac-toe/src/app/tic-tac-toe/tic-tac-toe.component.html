@@ -59,11 +59,13 @@
   <!-- final screen -->
   <div *ngIf="showEnd">
     <span>
-      <p>You win!!!</p>
-      <p>You lose...</p>
-      <p>The game ended in a draw...</p>
+      <p *ngIf="player===2">You win!!!</p>
+      <p *ngIf="player===1">You lose...</p>
+      <p *ngIf="player===0">The game ended in a draw...</p>
       <br />
-      <a href="#" class="button">
+      <a href="#" class="button"
+        (click)="newGame()"
+      >
         Play again
       </a>
     </span>

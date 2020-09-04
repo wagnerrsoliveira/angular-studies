@@ -71,6 +71,8 @@ export class TicTacToeService {
     this.numberOfMoves++;
     this.vitory =this.endGame(positionX,positionY, this.board, this.player);
 
+    this._player = (this._player === this.X) ? this.O : this.X;
+
     if(this.vitory.length===0 && this.numberOfMoves < 9){
       this.cpuPlay();
     }
